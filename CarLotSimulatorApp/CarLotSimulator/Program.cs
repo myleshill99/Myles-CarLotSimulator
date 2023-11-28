@@ -18,6 +18,48 @@ namespace CarLotSimulator
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
+            var carLot = new CarLot();
+
+            var honda = new Car();
+            honda.Year = 2001;
+            honda.Make = "Honda";
+            honda.Model = "Accord";
+            honda.EngineNoise = "Vroom";
+            honda.HonkNoise = "beep!";
+            honda.IsDriveable = true;
+
+            honda.MakeEngineNoise("vroom");
+            honda.MakeHonkNoise("honk");
+
+            carLot.Cars.Add(honda);
+
+            var volkswagen = new Car
+            {
+                Year = 2005,
+                Make = "Volkswagen",
+                Model = "Jetta",
+                EngineNoise = "vroom",
+                HonkNoise = "honk",
+                IsDriveable = true
+            };
+
+            volkswagen.MakeEngineNoise("vroom");
+            volkswagen.MakeHonkNoise("honk");
+            carLot.Cars.Add(volkswagen);
+
+            var dodge = new Car()
+            {
+                Year = 2010,
+                Make = "Dodge",
+                Model = "Charger",
+                EngineNoise = "vrooom",
+                HonkNoise = "honk",
+                IsDriveable = true
+            };
+
+            dodge.MakeEngineNoise("vroom");
+            dodge.MakeHonkNoise("honk");
+            carLot.Cars.Add(dodge);
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
@@ -26,8 +68,15 @@ namespace CarLotSimulator
 
             //Create a CarLot class
             //It should have at least one property: a List of cars
-            //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
+            //Instanciate a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            foreach (var car in carLot.Cars)
+            {
+                Console.WriteLine($"Make: {car.Make}");
+                Console.WriteLine($"Model: {car.Model}");
+                Console.WriteLine($"Year: {car.Year}");
+            }
         }
     }
 }
